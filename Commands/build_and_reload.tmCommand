@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/build_and_reload.rb"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Build then reload bundles</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>yaml_bundle.source</string>
+	<key>uuid</key>
+	<string>597A0AEE-5B52-4836-9964-D908A5B4CB60</string>
+</dict>
+</plist>
