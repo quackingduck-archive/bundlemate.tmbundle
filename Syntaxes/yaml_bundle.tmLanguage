@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>SOURCE.yaml</string>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^~Y</string>
+	<key>name</key>
+	<string>YAML Bundle Source</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.yaml</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;!\$)(#)(?!\{).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.number-sign.yaml</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>yaml_bundle.source</string>
+	<key>uuid</key>
+	<string>4B8FDF89-E042-46A8-9B41-DC7A3EBB335E</string>
+</dict>
+</plist>
