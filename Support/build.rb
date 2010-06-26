@@ -11,4 +11,4 @@ targets.each do |filename, data|
   end
 end
 
-puts "Finished building bundle"
+puts "Bundle Built"
