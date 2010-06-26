@@ -18,13 +18,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.yaml</string>
+					<string>punctuation.definition.comment.yaml_bundle</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?&lt;!\$)(#)(?!\{).*$\n?</string>
+			<string>(?&lt;=\s)(#)(?!\{).*$\n?</string>
 			<key>name</key>
-			<string>comment.line.number-sign.yaml</string>
+			<string>comment.line.number-sign.yaml_bundle</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
