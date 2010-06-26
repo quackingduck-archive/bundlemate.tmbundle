@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Convert plist to YAML</string>
+
+	<key>command</key>
+	<string>"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/plist_to_yaml.rb"</string>
+	
+	<key>input</key>
+	<string>none</string>
+	
+	<key>output</key>
+	<string>openAsNewDocument</string>
+		
+	<key>scope</key>
+	<string>text.xml.plist</string>
+	
+	<key>uuid</key>
+	<string>E46F3CC9-C86B-4C66-B785-9A13BF2965B1</string>
+</dict>
+</plist>

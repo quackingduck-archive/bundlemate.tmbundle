@@ -1,0 +1,6 @@
+* include plist gem in this bundle
+* build command should only run from inside a bundle dir
+* build & reload command
+* validate the data structures generated so textmate doesn't crash when you try to reload a bundle
+
+* self-host 
