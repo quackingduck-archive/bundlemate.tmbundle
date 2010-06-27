@@ -22,13 +22,13 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?&lt;=\s)(#)(?!\{).*$\n?</string>
+			<string>(?x)(?&lt;=\s)(\#)(?!\{).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.number-sign.yaml_bundle</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>yaml_bundle.source</string>
+	<string>source.yaml_bundle</string>
 	<key>uuid</key>
 	<string>4B8FDF89-E042-46A8-9B41-DC7A3EBB335E</string>
 </dict>
