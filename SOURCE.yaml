@@ -1,0 +1,120 @@
+Preferences/Comments.tmPreferences:
+  uuid: EDB8D2A0-6707-4A91-8A2A-98E90CE87A22
+  name: Comments
+  scope: source.yaml_bundle
+  settings:
+    shellVariables:
+    - name: TM_COMMENT_START
+      value: "# "
+
+Syntaxes/yaml_bundle.tmLanguage:
+  uuid: 4B8FDF89-E042-46A8-9B41-DC7A3EBB335E
+  # wish I could come up with a better name
+  name: YAML Bundle Source
+  scopeName: source.yaml_bundle
+  fileTypes: [ 'SOURCE.yaml' ]
+  keyEquivalent: ^~Y
+  patterns:
+
+  # comments
+  - name: comment.line.number-sign.yaml_bundle
+    # octothorpe where previous char was whitespace
+    match: (?<=\s|^) (\#) (?!\{) .* $\n?
+    captures:
+      1: { name: punctuation.definition.comment. }
+
+  # multi line key/regex pairs matchers
+  #   this is a hack.
+  #   1. The start of the first line that looks like key/val pair is
+  #      treated as the end point. (it should be the char before)
+  #   2. It's possible for the end pattern to match inside the regex unless
+  #      you escape the ':' char. So do that.
+  - begin: |
+      (
+        foldingStartMarker |
+        foldingStopMarker |
+        match |
+        begin |
+        end
+      ) (\:) [ ] \| $
+    end: ^ (?= \s* \w+ \:)
+    contentName: string.regexp.oniguruma.
+    beginCaptures:
+      1: { name: support.constant. }
+      2: { name: punctuation.separator.key-value. }
+    patterns: [ { include: source.regexp.oniguruma } ]
+
+  # file names
+  - match: |
+      ^(\S+?) (\:) \s* $
+    captures:
+      1: { name: entity.name.file. }
+      2: { name: punctuation.separator.key-value. }
+
+  # keys that have multi-line hashes or arrays as values
+  - match: |
+      (\s) (
+        patterns |
+        captures |
+        beginCaptures |
+        endCaptures |
+        settings |
+        shellVariables
+      ) (\:) \s* $
+    captures:
+      2: { name: support.constant. }
+      3: { name: punctuation.separator.key-value. }
+
+  # single line key/regex pairs matchers
+  - begin: |
+      (
+        foldingStartMarker |
+        foldingStopMarker |
+        match |
+        begin |
+        end
+      ) (\:)
+    end: $
+    contentName: string.regexp.oniguruma.
+    beginCaptures:
+      1: { name: support.constant. }
+      2: { name: punctuation.separator.key-value. }
+    patterns: [ { include: source.regexp.oniguruma } ]
+
+  # single line key/value pairs
+  - name: meta.value-pair.
+    contentName: string.
+    begin: |
+      ( uuid |
+        scopeName |
+        keyEquivalent |
+        name |
+        contentName |
+        include |
+        scope |
+        value )
+      (\:)
+    end: '(?=\]|\}|$)'
+    beginCaptures:
+      1: { name: support.constant. }
+      2: { name: punctuation.separator.key-value. }
+
+  # single line key/value pairs
+  - name: meta.value-pair.
+    contentName: inline-array.
+    begin: |
+      ( patterns |
+        fileTypes )
+      (\:) \s+ (\[)
+    end: (\]) \s* $
+    beginCaptures:
+      1: { name: support.constant. }
+      2: { name: punctuation.separator.key-value. }
+      3: { name: punctuation.section.array. }
+    endCaptures:
+      1: { name: punctuation.section.array. }
+    patterns:
+      - include: source.yaml_bundle
+      - name: string.quoted.single.
+        begin: \'
+        end: \'

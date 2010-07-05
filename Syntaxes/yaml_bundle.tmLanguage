@@ -100,8 +100,7 @@
 			  beginCaptures |
 			  endCaptures |
 			  settings |
-			  shellVariables |
-			  \d+
+			  shellVariables
 			) (\:) \s* $
 			</string>
 		</dict>
