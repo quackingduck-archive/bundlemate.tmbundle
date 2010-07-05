@@ -3,5 +3,3 @@
 * build & reload command
 * validate the data structures generated so textmate doesn't crash when you try to reload a bundle
 * change repo name to srcbundle-dev.tmbundle
-
-* self-host 
