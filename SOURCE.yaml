@@ -105,9 +105,12 @@ Syntaxes/yaml_bundle.tmLanguage:
         contentName |
         include |
         scope |
-        value )
+        value |
+        input |
+        output |
+        command )
       (\:)
-    end: '(?=\]|\}|$)'
+    end: (?= [\]\}\s]* $ )
     beginCaptures:
       1: { name: support.constant. }
       2: { name: punctuation.separator.key-value. }

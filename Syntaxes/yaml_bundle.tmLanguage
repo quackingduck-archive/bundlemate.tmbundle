@@ -148,7 +148,10 @@
 			  contentName |
 			  include |
 			  scope |
-			  value )
+			  value |
+			  input |
+			  output |
+			  command )
 			(\:)
 			</string>
 			<key>beginCaptures</key>
@@ -167,7 +170,7 @@
 			<key>contentName</key>
 			<string>string.yaml_bundle</string>
 			<key>end</key>
-			<string>(?x)(?=\]|\}|$)</string>
+			<string>(?x)(?= [\]\}\s]* $ )</string>
 			<key>name</key>
 			<string>meta.value-pair.yaml_bundle</string>
 		</dict>
