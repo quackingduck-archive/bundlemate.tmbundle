@@ -20,6 +20,14 @@ Commands/build_and_reload.tmCommand:
   input: none
   output: showAsTooltip
 
+Commands/plist_to_yaml.tmCommand:
+  uuid: E46F3CC9-C86B-4C66-B785-9A13BF2965B1
+  name: Convert plist to YAML
+  scope: text.xml.plist
+  command: '"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/plist_to_yaml.rb"'
+  input: none
+  output: openAsNewDocument
+
 Preferences/Comments.tmPreferences:
   uuid: EDB8D2A0-6707-4A91-8A2A-98E90CE87A22
   name: Comments
