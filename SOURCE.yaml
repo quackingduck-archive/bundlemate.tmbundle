@@ -2,6 +2,15 @@ info.plist:
   uuid: 8B80A1DA-62C9-4864-A94D-5D1DDA7DBC77
   name: Source Bundle Development
 
+Commands/build.tmCommand:
+  uuid: B568C8CE-86E3-45EB-B8BF-8D0A38A075AC
+  name: Build bundle from source file
+  scope: source.yaml_bundle
+  keyEquivalent: @b
+  command: '"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/build.rb"'
+  input: none
+  output: showAsTooltip
+
 Preferences/Comments.tmPreferences:
   uuid: EDB8D2A0-6707-4A91-8A2A-98E90CE87A22
   name: Comments
