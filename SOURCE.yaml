@@ -1,3 +1,7 @@
+info.plist:
+  uuid: 8B80A1DA-62C9-4864-A94D-5D1DDA7DBC77
+  name: Source Bundle Development
+
 Preferences/Comments.tmPreferences:
   uuid: EDB8D2A0-6707-4A91-8A2A-98E90CE87A22
   name: Comments
