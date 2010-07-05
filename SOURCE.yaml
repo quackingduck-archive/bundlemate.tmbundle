@@ -11,6 +11,15 @@ Commands/build.tmCommand:
   input: none
   output: showAsTooltip
 
+Commands/build_and_reload.tmCommand:
+  uuid: 597A0AEE-5B52-4836-9964-D908A5B4CB60
+  name: Build then reload bundles
+  scope: source.yaml_bundle
+  keyEquivalent: @r
+  command: '"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/build_and_reload.rb"'
+  input: none
+  output: showAsTooltip
+
 Preferences/Comments.tmPreferences:
   uuid: EDB8D2A0-6707-4A91-8A2A-98E90CE87A22
   name: Comments
