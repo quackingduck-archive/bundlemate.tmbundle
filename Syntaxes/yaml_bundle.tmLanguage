@@ -111,7 +111,8 @@
 			  foldingStopMarker |
 			  match |
 			  begin |
-			  end
+			  end |
+			  symbolTransformation
 			) (\:)
 			</string>
 			<key>beginCaptures</key>
@@ -151,7 +152,8 @@
 			  value |
 			  input |
 			  output |
-			  command )
+			  command |
+			  showInSymbolList )
 			(\:)
 			</string>
 			<key>beginCaptures</key>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List: Files</string>
+	<key>scope</key>
+	<string>entity.name.file.yaml_bundle</string>
+	<key>settings</key>
+	<dict>
+		<key>showInSymbolList</key>
+		<integer>1</integer>
+		<key>symbolTransformation</key>
+		<string>s/:\s*\z//g;</string>
+	</dict>
+	<key>uuid</key>
+	<string>2E0D5130-CEBB-4A80-BB06-B60ABF7A38AF</string>
+</dict>
+</plist>

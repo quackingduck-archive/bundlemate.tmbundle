@@ -1,6 +1,6 @@
 info.plist:
   uuid: 8B80A1DA-62C9-4864-A94D-5D1DDA7DBC77
-  name: Source Bundle Development
+  name: BundleMate
 
 Commands/build.tmCommand:
   uuid: B568C8CE-86E3-45EB-B8BF-8D0A38A075AC
@@ -36,6 +36,14 @@ Preferences/Comments.tmPreferences:
     shellVariables:
     - name: TM_COMMENT_START
       value: "# "
+
+Preferences/file-list.plist:
+  uuid: 2E0D5130-CEBB-4A80-BB06-B60ABF7A38AF
+  name: "Symbol List: Files"
+  scope: entity.name.file.yaml_bundle
+  settings:
+    showInSymbolList: 1
+    symbolTransformation: s/:\s*\z//g;
 
 Syntaxes/yaml_bundle.tmLanguage:
   uuid: 4B8FDF89-E042-46A8-9B41-DC7A3EBB335E
@@ -102,7 +110,8 @@ Syntaxes/yaml_bundle.tmLanguage:
         foldingStopMarker |
         match |
         begin |
-        end
+        end |
+        symbolTransformation
       ) (\:)
     end: $
     contentName: string.regexp.oniguruma.
@@ -125,7 +134,8 @@ Syntaxes/yaml_bundle.tmLanguage:
         value |
         input |
         output |
-        command )
+        command |
+        showInSymbolList )
       (\:)
     end: (?= [\]\}\s]* $ )
     beginCaptures:
