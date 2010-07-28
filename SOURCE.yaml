@@ -45,6 +45,18 @@ Preferences/file-list.plist:
     showInSymbolList: 1
     symbolTransformation: s/:\s*\z//g;
 
+Snippets/uuid_upper.plist:
+  uuid: A3F62B98-D169-454F-992D-EA9C9D822185
+  name: UUID - Uppercase
+  tabTrigger: UUIDGEN
+  content: `uuid`
+
+Snippets/uuid_lower.plist:
+  uuid: EC6EF13E-1226-494F-A10A-8610E1F560E0
+  name: UUID - Lowercase
+  tabTrigger: uuidgen
+  content: `uuid | tr [A-Z] [a-z]`
+
 Syntaxes/yaml_bundle.tmLanguage:
   uuid: 4B8FDF89-E042-46A8-9B41-DC7A3EBB335E
   # wish I could come up with a better name
