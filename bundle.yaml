@@ -1,0 +1,126 @@
+info.plist:
+  uuid: 8B80A1DA-62C9-4864-A94D-5D1DDA7DBC77
+  name: BundleMate
+
+Syntaxes/bundlemate.tmLanguage:
+  uuid: 4B8FDF89-E042-46A8-9B41-DC7A3EBB335E
+  # wish I could come up with a better name
+  name: YAML (BundleMate)
+  scopeName: source.bundlemate
+  fileTypes: [ 'bundle.yaml' ]
+  keyEquivalent: ^~B
+  patterns:
+
+  # comments
+  - name: comment.line.number-sign.bundlemate
+    # octothorpe where previous char was whitespace
+    match: (?<=\s|^) (\#) (?!\{) .* $\n?
+    captures:
+      1: { name: punctuation.definition.comment. }
+
+  # multi line regex matcher, this is a hack.
+  # 1. The start of the first line that looks like key/val pair is
+  #    treated as the end point. (it should be the char before)
+  # 2. It's possible for the end pattern to match inside the regex unless
+  #    you escape the ':' char. So do that.
+  - begin: (?<=:[ ]) (\|) $
+    end: ^ (?= \s* \w+ \:)
+    contentName: string.regexp.oniguruma.
+    patterns: [ { include: source.regexp.oniguruma } ]
+
+  - begin: |
+      # looks like onigurama supports variable width negative lookbehind, nice
+      (?<=
+        match|
+        begin|
+        end|
+        foldingStartMarker|
+        foldingStopMarker|
+        symbolTransformation
+      )
+      \:
+      (?![ ]\|$)
+      \s*
+    end: $
+    contentName: string.regexp.oniguruma.
+    patterns: [ { include: source.regexp.oniguruma } ]
+
+  # file names
+  - match: ^(\S+?) (\:) \s* $
+    captures:
+      1: { name: entity.name.file. }
+      2: { name: punctuation.separator.key-value. }
+
+  # other keys
+  - match: \s ([a-zA-Z]+?) (?=\:)
+    captures:
+      1: { name: support.constant. }
+
+  # string values
+
+  - name: string.quoted.single.
+    begin: \'
+    end: \'
+
+  - name: string.double.single.
+    begin: \"
+    end: \"
+
+# Compiles the yaml bundle file to plist files
+Commands/build.tmCommand:
+  uuid: B568C8CE-86E3-45EB-B8BF-8D0A38A075AC
+  name: Build bundle from source file
+  scope: source.bundlemate
+  keyEquivalent: @b
+  command: '"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/build.rb"'
+  input: none
+  output: showAsTooltip
+
+# Reloads bundles after building
+Commands/build_and_reload.tmCommand:
+  uuid: 597A0AEE-5B52-4836-9964-D908A5B4CB60
+  name: Build then reload bundles
+  scope: source.bundlemate
+  keyEquivalent: @r
+  command: '"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/build_and_reload.rb"'
+  input: none
+  output: showAsTooltip
+
+# Useful for starting a yaml sytax from one that's only available as a plist
+Commands/plist_to_yaml.tmCommand:
+  uuid: E46F3CC9-C86B-4C66-B785-9A13BF2965B1
+  name: Convert plist to YAML
+  scope: text.xml.plist
+  command: '"${TM_RUBY:-ruby}" -rubygems "$TM_BUNDLE_SUPPORT/plist_to_yaml.rb"'
+  input: none
+  output: openAsNewDocument
+
+Preferences/Comments.tmPreferences:
+  uuid: EDB8D2A0-6707-4A91-8A2A-98E90CE87A22
+  name: Comments
+  scope: source.bundlemate
+  settings:
+    shellVariables:
+    - name: TM_COMMENT_START
+      value: "# "
+
+# What to use for command+shift+t
+Preferences/file-list.plist:
+  uuid: 2E0D5130-CEBB-4A80-BB06-B60ABF7A38AF
+  name: "Symbol List: Files"
+  scope: entity.name.file.bundlemate
+  settings:
+    showInSymbolList: 1
+    symbolTransformation: s/:\s*\z//g;
+
+Snippets/uuid_upper.plist:
+  uuid: A3F62B98-D169-454F-992D-EA9C9D822185
+  name: UUID - Uppercase
+  tabTrigger: UUIDGEN
+  content: `uuidgen`
+
+Snippets/uuid_lower.plist:
+  uuid: EC6EF13E-1226-494F-A10A-8610E1F560E0
+  name: UUID - Lowercase
+  tabTrigger: uuidgen
+  content: `uuidgen | tr [A-Z] [a-z]`

@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Symbol List: Files</string>
 	<key>scope</key>
-	<string>entity.name.file.yaml_bundle</string>
+	<string>entity.name.file.bundlemate</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>

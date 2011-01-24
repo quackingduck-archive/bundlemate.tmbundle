@@ -1,9 +1,4 @@
-* source.yaml_bundle -> source.bundlemate
-* SOURCE.yaml -> bundle.yaml
-* include plist gem in this bundle
+* include plist gem in this bundle (via bundler?)
 * change repo name (at github) to bundlemate.tmbundle
-
 * build command should only run from inside a bundle dir
 * validate the data structures generated so textmate doesn't crash when you try to reload a bundle
-
-

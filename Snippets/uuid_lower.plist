@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>`uuid | tr [A-Z] [a-z]`</string>
+	<string>`uuidgen | tr [A-Z] [a-z]`</string>
 	<key>name</key>
 	<string>UUID - Lowercase</string>
 	<key>tabTrigger</key>

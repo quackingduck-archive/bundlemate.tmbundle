@@ -13,7 +13,7 @@
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
-	<string>source.yaml_bundle</string>
+	<string>source.bundlemate</string>
 	<key>uuid</key>
 	<string>B568C8CE-86E3-45EB-B8BF-8D0A38A075AC</string>
 </dict>
