@@ -4,7 +4,7 @@ I bring this up because there's one thing that has always struck me as odd about
 
 This is the official way to edit language grammars:
 
-<img alt="Bundle Editor screenshot" src="http://github.com/quackingduck/bundlemate.tmbundle/raw/master/bundle-editor-screenshot.png" width='800'>
+<img alt="Bundle Editor screenshot" src="https://github.com/quackingduck/bundlemate.tmbundle/raw/master/bundle-editor-screenshot.png" width='800'>
 
 There's a texteditor inside the GUI for configuring the texteditor that is worse than the texteditor you are trying to configure. 
 
