@@ -1,4 +1,5 @@
 require(ENV['TM_BUNDLE_SUPPORT'] + '/compilers')
+require 'yaml'
 
 source_file = ENV['TM_FILEPATH']
 bundle_dir  = File.dirname(source_file)
