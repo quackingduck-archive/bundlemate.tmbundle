@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: Plist::Emit</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/plist/generator_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/plist/generator.rb">lib/plist/generator.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="Emit/IndentedString.html">Plist::Emit::IndentedString</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-comment">::comment</a></li>
+					
+					<li><a href="#method-c-dump">::dump</a></li>
+					
+					<li><a href="#method-c-element_type">::element_type</a></li>
+					
+					<li><a href="#method-c-plist_node">::plist_node</a></li>
+					
+					<li><a href="#method-c-save_plist">::save_plist</a></li>
+					
+					<li><a href="#method-c-tag">::tag</a></li>
+					
+					<li><a href="#method-c-wrap">::wrap</a></li>
+					
+					<li><a href="#method-i-save_plist">#save_plist</a></li>
+					
+					<li><a href="#method-i-to_plist">#to_plist</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Plist.html">Plist</a></li>
+				
+					<li><a href="../Plist/Emit.html">Plist::Emit</a></li>
+				
+					<li><a href="../Plist/Listener.html">Plist::Listener</a></li>
+				
+					<li><a href="../Plist/PArray.html">Plist::PArray</a></li>
+				
+					<li><a href="../Plist/PData.html">Plist::PData</a></li>
+				
+					<li><a href="../Plist/PDate.html">Plist::PDate</a></li>
+				
+					<li><a href="../Plist/PDict.html">Plist::PDict</a></li>
+				
+					<li><a href="../Plist/PFalse.html">Plist::PFalse</a></li>
+				
+					<li><a href="../Plist/PInteger.html">Plist::PInteger</a></li>
+				
+					<li><a href="../Plist/PKey.html">Plist::PKey</a></li>
+				
+					<li><a href="../Plist/PList.html">Plist::PList</a></li>
+				
+					<li><a href="../Plist/PReal.html">Plist::PReal</a></li>
+				
+					<li><a href="../Plist/PString.html">Plist::PString</a></li>
+				
+					<li><a href="../Plist/PTag.html">Plist::PTag</a></li>
+				
+					<li><a href="../Plist/PTrue.html">Plist::PTrue</a></li>
+				
+					<li><a href="../Plist/StreamParser.html">Plist::StreamParser</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">Plist::Emit</h1>
+
+		<div id="description">
+			<h3>Create a plist</h3>
+<p>
+You can dump an object to a plist in one of two ways:
+</p>
+<ul>
+<li><p>
+<tt>Plist::Emit.dump(obj)</tt>
+</p>
+</li>
+<li><p>
+<tt>obj.to_plist</tt>
+</p>
+<ul>
+<li><p>
+This requires that you mixin the <tt>Plist::Emit</tt> module, which is
+already done for <tt>Array</tt> and <tt>Hash</tt>.
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+The following Ruby classes are converted into native plist types:
+</p>
+<pre>
+  Array, Bignum, Date, DateTime, Fixnum, Float, Hash, Integer, String, Symbol, Time, true, false
+</pre>
+<ul>
+<li><p>
+<tt>Array</tt> and <tt>Hash</tt> are both recursive; their elements will be
+converted into plist nodes inside the <array> and <dict> containers
+(respectively).
+</p>
+</li>
+<li><p>
+<tt>IO</tt> (and its descendants) and <tt>StringIO</tt> objects are read
+from and their contents placed in a <data> element.
+</p>
+</li>
+<li><p>
+User classes may implement <tt>to_plist_node</tt> to dictate how they
+should be serialized; otherwise the object will be passed to
+<tt>Marshal.dump</tt> and the result placed in a <data> element.
+</p>
+</li>
+</ul>
+<p>
+For detailed usage instructions, refer to <a
+href="../files/docs/USAGE.html">USAGE</a> and the methods documented below.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="dump-method" class="method-detail ">
+				<a name="method-c-dump"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">dump</span><span
+						class="method-args">(obj, envelope = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The following Ruby classes are converted into native plist types:
+</p>
+<pre>
+  Array, Bignum, Date, DateTime, Fixnum, Float, Hash, Integer, String, Symbol, Time
+</pre>
+<p>
+Write us (via RubyForge) if you think another class can be coerced safely
+into one of the expected plist classes.
+</p>
+<p>
+<tt>IO</tt> and <tt>StringIO</tt> objects are encoded and placed in <data>
+elements; other objects are <tt>Marshal.dump</tt>&#8216;ed unless they
+implement <tt>to_plist_node</tt>.
+</p>
+<p>
+The <tt>envelope</tt> parameters dictates whether or not the resultant
+plist fragment is wrapped in the normal XML/plist header and footer.  Set
+it to false if you only want the fragment.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="dump-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 44</span>
+44:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">envelope</span> = <span class="ruby-keyword kw">true</span>)
+45:     <span class="ruby-identifier">output</span> = <span class="ruby-identifier">plist_node</span>(<span class="ruby-identifier">obj</span>)
+46: 
+47:     <span class="ruby-identifier">output</span> = <span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">output</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">envelope</span>
+48: 
+49:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">output</span>
+50:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="save-plist-method" class="method-detail ">
+				<a name="method-c-save_plist"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">save_plist</span><span
+						class="method-args">(obj, filename)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Writes the serialized object&#8217;s plist to the specified filename.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="save-plist-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 53</span>
+53:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">save_plist</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">filename</span>)
+54:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value str">'wb'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+55:       <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_plist</span>)
+56:     <span class="ruby-keyword kw">end</span>
+57:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-class-method-details" class="method-section section">
+			<h3 class="section-header">Private Class Methods</h3>
+
+		
+			<div id="comment-method" class="method-detail ">
+				<a name="method-c-comment"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">comment</span><span
+						class="method-args">(content)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="comment-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 120</span>
+120:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">comment</span>(<span class="ruby-identifier">content</span>)
+121:     <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;&lt;!-- #{content} --&gt;\n&quot;</span>
+122:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="element-type-method" class="method-detail ">
+				<a name="method-c-element_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">element_type</span><span
+						class="method-args">(item)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="element-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 157</span>
+157:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">element_type</span>(<span class="ruby-identifier">item</span>)
+158:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">item</span>
+159:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">Symbol</span>
+160:       <span class="ruby-value str">'string'</span>
+161: 
+162:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Fixnum</span>, <span class="ruby-constant">Bignum</span>, <span class="ruby-constant">Integer</span>
+163:       <span class="ruby-value str">'integer'</span>
+164: 
+165:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Float</span>
+166:       <span class="ruby-value str">'real'</span>
+167: 
+168:     <span class="ruby-keyword kw">else</span>
+169:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Don't know about this data type... something must be wrong!&quot;</span>
+170:     <span class="ruby-keyword kw">end</span>
+171:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="plist-node-method" class="method-detail ">
+				<a name="method-c-plist_node"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">plist_node</span><span
+						class="method-args">(element)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="plist-node-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 60</span>
+ 60:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">plist_node</span>(<span class="ruby-identifier">element</span>)
+ 61:     <span class="ruby-identifier">output</span> = <span class="ruby-value str">''</span>
+ 62: 
+ 63:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_plist_node</span>
+ 64:       <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">to_plist_node</span>
+ 65:     <span class="ruby-keyword kw">else</span>
+ 66:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">element</span>
+ 67:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+ 68:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">empty?</span>
+ 69:           <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;&lt;array/&gt;\n&quot;</span>
+ 70:         <span class="ruby-keyword kw">else</span>
+ 71:           <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'array'</span>) {
+ 72:             <span class="ruby-identifier">element</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">plist_node</span>(<span class="ruby-identifier">e</span>)}
+ 73:           }
+ 74:         <span class="ruby-keyword kw">end</span>
+ 75:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Hash</span>
+ 76:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">empty?</span>
+ 77:           <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;&lt;dict/&gt;\n&quot;</span>
+ 78:         <span class="ruby-keyword kw">else</span>
+ 79:           <span class="ruby-identifier">inner_tags</span> = []
+ 80: 
+ 81:           <span class="ruby-identifier">element</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+ 82:             <span class="ruby-identifier">v</span> = <span class="ruby-identifier">element</span>[<span class="ruby-identifier">k</span>]
+ 83:             <span class="ruby-identifier">inner_tags</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'key'</span>, <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escapeHTML</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>))
+ 84:             <span class="ruby-identifier">inner_tags</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">plist_node</span>(<span class="ruby-identifier">v</span>)
+ 85:           <span class="ruby-keyword kw">end</span>
+ 86: 
+ 87:           <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'dict'</span>) {
+ 88:             <span class="ruby-identifier">inner_tags</span>
+ 89:           }
+ 90:         <span class="ruby-keyword kw">end</span>
+ 91:       <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-keyword kw">false</span>
+ 92:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;#{element}/&gt;\n&quot;</span>
+ 93:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Time</span>
+ 94:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'date'</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">utc</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-value str">'%Y-%m-%dT%H:%M:%SZ'</span>))
+ 95:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Date</span> <span class="ruby-comment cmt"># also catches DateTime</span>
+ 96:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'date'</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-value str">'%Y-%m-%dT%H:%M:%SZ'</span>))
+ 97:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Fixnum</span>, <span class="ruby-constant">Bignum</span>, <span class="ruby-constant">Integer</span>, <span class="ruby-constant">Float</span>
+ 98:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-identifier">element_type</span>(<span class="ruby-identifier">element</span>), <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escapeHTML</span>(<span class="ruby-identifier">element</span>.<span class="ruby-identifier">to_s</span>))
+ 99:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">IO</span>, <span class="ruby-constant">StringIO</span>
+100:         <span class="ruby-identifier">element</span>.<span class="ruby-identifier">rewind</span>
+101:         <span class="ruby-identifier">contents</span> = <span class="ruby-identifier">element</span>.<span class="ruby-identifier">read</span>
+102:         <span class="ruby-comment cmt"># note that apple plists are wrapped at a different length then</span>
+103:         <span class="ruby-comment cmt"># what ruby's base64 wraps by default.</span>
+104:         <span class="ruby-comment cmt"># I used #encode64 instead of #b64encode (which allows a length arg)</span>
+105:         <span class="ruby-comment cmt"># because b64encode is b0rked and ignores the length arg.</span>
+106:         <span class="ruby-identifier">data</span> = <span class="ruby-value str">&quot;\n&quot;</span>
+107:         <span class="ruby-constant">Base64</span><span class="ruby-operator">::</span><span class="ruby-identifier">encode64</span>(<span class="ruby-identifier">contents</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s+/</span>, <span class="ruby-value str">''</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/.{1,68}/</span>) { <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">$&amp;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span> }
+108:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'data'</span>, <span class="ruby-identifier">data</span>)
+109:       <span class="ruby-keyword kw">else</span>
+110:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">comment</span>( <span class="ruby-value str">'The &lt;data&gt; element below contains a Ruby object which has been serialized with Marshal.dump.'</span> )
+111:         <span class="ruby-identifier">data</span> = <span class="ruby-value str">&quot;\n&quot;</span>
+112:         <span class="ruby-constant">Base64</span><span class="ruby-operator">::</span><span class="ruby-identifier">encode64</span>(<span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">element</span>)).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s+/</span>, <span class="ruby-value str">''</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/.{1,68}/</span>) { <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">$&amp;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span> }
+113:         <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'data'</span>, <span class="ruby-identifier">data</span> )
+114:       <span class="ruby-keyword kw">end</span>
+115:     <span class="ruby-keyword kw">end</span>
+116: 
+117:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">output</span>
+118:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="tag-method" class="method-detail ">
+				<a name="method-c-tag"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">tag</span><span
+						class="method-args">(type, contents = '', &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="tag-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 124</span>
+124:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">contents</span> = <span class="ruby-value str">''</span>, &amp;<span class="ruby-identifier">block</span>)
+125:     <span class="ruby-identifier">out</span> = <span class="ruby-keyword kw">nil</span>
+126: 
+127:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+128:       <span class="ruby-identifier">out</span> = <span class="ruby-constant">IndentedString</span>.<span class="ruby-identifier">new</span>
+129:       <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;#{type}&gt;&quot;</span>
+130:       <span class="ruby-identifier">out</span>.<span class="ruby-identifier">raise_indent</span>
+131: 
+132:       <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+133: 
+134:       <span class="ruby-identifier">out</span>.<span class="ruby-identifier">lower_indent</span>
+135:       <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;&lt;/#{type}&gt;&quot;</span>
+136:     <span class="ruby-keyword kw">else</span>
+137:       <span class="ruby-identifier">out</span> = <span class="ruby-node">&quot;&lt;#{type}&gt;#{contents.to_s}&lt;/#{type}&gt;\n&quot;</span>
+138:     <span class="ruby-keyword kw">end</span>
+139: 
+140:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">out</span>.<span class="ruby-identifier">to_s</span>
+141:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="wrap-method" class="method-detail ">
+				<a name="method-c-wrap"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">wrap</span><span
+						class="method-args">(contents)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="wrap-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 143</span>
+143:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">contents</span>)
+144:     <span class="ruby-identifier">output</span> = <span class="ruby-value str">''</span>
+145: 
+146:     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>
+147:     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>
+148:     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'&lt;plist version=&quot;1.0&quot;&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>
+149: 
+150:     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">contents</span>
+151: 
+152:     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'&lt;/plist&gt;'</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>
+153: 
+154:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">output</span>
+155:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="save-plist-method" class="method-detail ">
+				<a name="method-i-save_plist"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">save_plist</span><span
+						class="method-args">(filename)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Helper method for injecting into classes.  Calls <tt><a
+href="Emit.html#method-i-save_plist">Plist::Emit.save_plist</a></tt> with
+<tt>self</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="save-plist-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 32</span>
+32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save_plist</span>(<span class="ruby-identifier">filename</span>)
+33:     <span class="ruby-constant">Plist</span><span class="ruby-operator">::</span><span class="ruby-constant">Emit</span>.<span class="ruby-identifier">save_plist</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">filename</span>)
+34:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-plist-method" class="method-detail ">
+				<a name="method-i-to_plist"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_plist</span><span
+						class="method-args">(envelope = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Helper method for injecting into classes.  Calls <tt>Plist::Emit.dump</tt>
+with <tt>self</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="to-plist-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/plist/generator.rb, line 27</span>
+27:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_plist</span>(<span class="ruby-identifier">envelope</span> = <span class="ruby-keyword kw">true</span>)
+28:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Plist</span><span class="ruby-operator">::</span><span class="ruby-constant">Emit</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">envelope</span>)
+29:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

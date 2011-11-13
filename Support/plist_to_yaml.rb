@@ -1,3 +1,6 @@
+ENV['GEM_PATH'] = ENV['TM_BUNDLE_SUPPORT'] + '/gems'
+
+require 'rubygems'
 require 'plist'
 require 'yaml'
 

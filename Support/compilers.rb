@@ -1,3 +1,9 @@
+# Changes where rubygems looks for installed gems.
+# We include the plist gem with bundlemade so users don't have to know that
+# rubygems exists to use bundlemate
+ENV['GEM_PATH'] = ENV['TM_BUNDLE_SUPPORT'] + '/gems'
+
+require 'rubygems'
 require 'plist'
 
 class TMPlist

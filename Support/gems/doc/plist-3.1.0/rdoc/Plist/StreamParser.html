@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Plist::StreamParser</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/plist/parser_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/plist/parser.rb">lib/plist/parser.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-parse">#parse</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Plist.html">Plist</a></li>
+				
+					<li><a href="../Plist/Emit.html">Plist::Emit</a></li>
+				
+					<li><a href="../Plist/Listener.html">Plist::Listener</a></li>
+				
+					<li><a href="../Plist/PArray.html">Plist::PArray</a></li>
+				
+					<li><a href="../Plist/PData.html">Plist::PData</a></li>
+				
+					<li><a href="../Plist/PDate.html">Plist::PDate</a></li>
+				
+					<li><a href="../Plist/PDict.html">Plist::PDict</a></li>
+				
+					<li><a href="../Plist/PFalse.html">Plist::PFalse</a></li>
+				
+					<li><a href="../Plist/PInteger.html">Plist::PInteger</a></li>
+				
+					<li><a href="../Plist/PKey.html">Plist::PKey</a></li>
+				
+					<li><a href="../Plist/PList.html">Plist::PList</a></li>
+				
+					<li><a href="../Plist/PReal.html">Plist::PReal</a></li>
+				
+					<li><a href="../Plist/PString.html">Plist::PString</a></li>
+				
+					<li><a href="../Plist/PTag.html">Plist::PTag</a></li>
+				
+					<li><a href="../Plist/PTrue.html">Plist::PTrue</a></li>
+				
+					<li><a href="../Plist/StreamParser.html">Plist::StreamParser</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Plist::StreamParser</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="TEXT">TEXT</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="XMLDECL_PATTERN">XMLDECL_PATTERN</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DOCTYPE_PATTERN">DOCTYPE_PATTERN</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="COMMENT_START">COMMENT_START</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="COMMENT_END">COMMENT_END</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">( plist_data_or_file, listener )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/plist/parser.rb, line 63</span>
+63:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">plist_data_or_file</span>, <span class="ruby-identifier">listener</span> )
+64:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">plist_data_or_file</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:read</span>
+65:         <span class="ruby-ivar">@xml</span> = <span class="ruby-identifier">plist_data_or_file</span>.<span class="ruby-identifier">read</span>
+66:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">plist_data_or_file</span>
+67:         <span class="ruby-ivar">@xml</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>( <span class="ruby-identifier">plist_data_or_file</span> )
+68:       <span class="ruby-keyword kw">else</span>
+69:         <span class="ruby-ivar">@xml</span> = <span class="ruby-identifier">plist_data_or_file</span>
+70:       <span class="ruby-keyword kw">end</span>
+71: 
+72:       <span class="ruby-ivar">@listener</span> = <span class="ruby-identifier">listener</span>
+73:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="parse-method" class="method-detail ">
+				<a name="method-i-parse"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="parse-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/plist/parser.rb, line 82</span>
+ 82:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>
+ 83:       <span class="ruby-identifier">plist_tags</span> = <span class="ruby-constant">PTag</span><span class="ruby-operator">::</span><span class="ruby-identifier">mappings</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'|'</span>)
+ 84:       <span class="ruby-identifier">start_tag</span>  = <span class="ruby-node">/&lt;(#{plist_tags})([^&gt;]*)&gt;/</span>
+ 85:       <span class="ruby-identifier">end_tag</span>    = <span class="ruby-node">/&lt;\/(#{plist_tags})[^&gt;]*&gt;/</span>
+ 86: 
+ 87:       <span class="ruby-identifier">require</span> <span class="ruby-value str">'strscan'</span>
+ 88: 
+ 89:       <span class="ruby-ivar">@scanner</span> = <span class="ruby-constant">StringScanner</span>.<span class="ruby-identifier">new</span>( <span class="ruby-ivar">@xml</span> )
+ 90:       <span class="ruby-keyword kw">until</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">eos?</span>
+ 91:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">COMMENT_START</span>)
+ 92:           <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">COMMENT_END</span>)
+ 93:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">XMLDECL_PATTERN</span>)
+ 94:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">DOCTYPE_PATTERN</span>)
+ 95:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">start_tag</span>)
+ 96:           <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">tag_start</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>], <span class="ruby-keyword kw">nil</span>)
+ 97:           <span class="ruby-keyword kw">if</span> (<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\/$/</span>)
+ 98:             <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">tag_end</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>])
+ 99:           <span class="ruby-keyword kw">end</span>
+100:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">TEXT</span>)
+101:           <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">text</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>])
+102:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">end_tag</span>)
+103:           <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">tag_end</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>])
+104:         <span class="ruby-keyword kw">else</span>
+105:           <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Unimplemented element&quot;</span>
+106:         <span class="ruby-keyword kw">end</span>
+107:       <span class="ruby-keyword kw">end</span>
+108:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
