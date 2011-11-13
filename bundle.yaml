@@ -72,7 +72,7 @@ Commands/build.tmCommand:
   name: Build bundle from source file
   scope: source.bundlemate
   keyEquivalent: @b
-  command: '"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/build.rb"'
+  command: 'ruby "$TM_BUNDLE_SUPPORT/build.rb"'
   input: none
   output: showAsTooltip
 
@@ -82,7 +82,7 @@ Commands/build_and_reload.tmCommand:
   name: Build then reload bundles
   scope: source.bundlemate
   keyEquivalent: @r
-  command: '"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/build_and_reload.rb"'
+  command: 'ruby "$TM_BUNDLE_SUPPORT/build_and_reload.rb"'
   input: none
   output: showAsTooltip
 
@@ -91,7 +91,7 @@ Commands/plist_to_yaml.tmCommand:
   uuid: E46F3CC9-C86B-4C66-B785-9A13BF2965B1
   name: Convert plist to YAML
   scope: text.xml.plist
-  command: '"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/plist_to_yaml.rb"'
+  command: 'ruby "$TM_BUNDLE_SUPPORT/plist_to_yaml.rb"'
   input: none
   output: openAsNewDocument
 

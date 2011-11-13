@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>command</key>
-	<string>&quot;${TM_RUBY:-ruby}&quot; &quot;$TM_BUNDLE_SUPPORT/build.rb&quot;</string>
+	<string>ruby &quot;$TM_BUNDLE_SUPPORT/build.rb&quot;</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
