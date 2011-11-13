@@ -95,7 +95,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?x)\s ([a-zA-Z]+?) (?=\:)</string>
+			<string>(?x)\s ([a-zA-Z-]+?) (?=\:)</string>
 		</dict>
 		<dict>
 			<key>begin</key>

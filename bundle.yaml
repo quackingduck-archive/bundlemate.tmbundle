@@ -52,7 +52,7 @@ Syntaxes/bundlemate.tmLanguage:
       2: { name: punctuation.separator.key-value. }
 
   # other keys
-  - match: \s ([a-zA-Z]+?) (?=\:)
+  - match: \s ([a-zA-Z-]+?) (?=\:)
     captures:
       1: { name: support.constant. }
 
