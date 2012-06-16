@@ -2,9 +2,10 @@ info.plist:
   uuid: 8B80A1DA-62C9-4864-A94D-5D1DDA7DBC77
   name: BundleMate
 
+# Some highlighting rules for the subset of yaml used as the source format
+# for bundlemate. This file itself is an example of that format.
 Syntaxes/bundlemate.tmLanguage:
   uuid: 4B8FDF89-E042-46A8-9B41-DC7A3EBB335E
-  # wish I could come up with a better name
   name: YAML (BundleMate)
   scopeName: source.bundlemate
   fileTypes: [ 'bundle.yaml' ]
